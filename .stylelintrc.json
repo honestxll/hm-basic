@@ -1,0 +1,29 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss",
+    "stylelint-config-rational-order",
+    "stylelint-config-prettier",
+    "stylelint-config-recommended-vue",
+    "stylelint-config-recommended-vue/scss"
+  ],
+  "defaultSeverity": "warning",
+  "ignoreFiles": ["dist/**/*", "node_modules/**/*"],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "no-empty-source": null
+  },
+  "overrides": [
+    {
+      "files": ["*.vue", "**/*.vue"],
+      "rules": {
+        "rule-empty-line-before": [
+          "always",
+          {
+            "except": ["after-rule", "after-single-line-comment", "first-nested"]
+          }
+        ]
+      }
+    }
+  ]
+}

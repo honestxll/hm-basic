@@ -1,0 +1,52 @@
+// 间距类
+$spacing: 5px * 2;
+$spacers: (
+  0: 0,
+  1: $spacing,
+  2: $spacing * 2,
+  3: $spacing * 3,
+  4: $spacing * 4,
+  5: $spacing * 5,
+);
+
+/* comment */
+
+.body {
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+}
+
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $size, $length in $spacers {
+    .#{$abbrev}-#{$size} {
+      #{$prop}: $length !important;
+    }
+    .#{$abbrev}t-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-top: $length !important;
+    }
+    .#{$abbrev}r-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-right: $length !important;
+    }
+    .#{$abbrev}b-#{$size},
+    .#{$abbrev}y-#{$size} {
+      #{$prop}-bottom: $length !important;
+    }
+    .#{$abbrev}l-#{$size},
+    .#{$abbrev}x-#{$size} {
+      #{$prop}-left: $length !important;
+    }
+    .space-x-#{$size} > :not([hidden]) ~ :not([hidden]) {
+      margin-left: $length !important;
+    }
+    .space-y-#{$size} > :not([hidden]) ~ :not([hidden]) {
+      margin-top: $length !important;
+    }
+  }
+}
