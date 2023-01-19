@@ -8,7 +8,12 @@ export function setupUserLoginGuard(router: Router) {
   router.beforeEach(async (to, from, next) => {
     //  如果是白名单就直接放行
     if (WHITE_LIST.includes(to.path)) {
-      next()
+      if (isLogin() && to.name === 'login') {
+        // 如果登录了就直接去首页
+        next({ path: '/' })
+      } else {
+        next()
+      }
       return
     }
 

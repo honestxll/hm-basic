@@ -19,6 +19,7 @@ const userInfo = {
   registrationDate: '2013-05-10 12:10:00',
   accountId: '15012312300',
   certification: 1,
+  permissions: ['blog'],
   role: 'admin',
 }
 

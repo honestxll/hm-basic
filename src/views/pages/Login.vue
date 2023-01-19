@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import { getUserInfo } from '@/api/user'
 import { useUserStore } from '@/store'
 import { reactive } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 const userStore = useUserStore()
 const formData = reactive({
-  username: '',
-  password: '',
+  username: 'admin',
+  password: '123456',
 })
 const router = useRouter()
 const route = useRoute()
@@ -27,24 +26,25 @@ const onLogin = async () => {
     alert((error as any).data.message || '登录失败')
   }
 }
-const init = async () => {
-  const response = await userStore.info()
-  const respons = await userStore.info()
-  console.log('response', response)
-  console.log('response', respons)
-}
-init()
 </script>
 
 <template>
-  <form @submit.prevent="onLogin" class="space-y-1 py-5">
-    <input type="text" id="username" v-model="formData.username" placeholder="请输入用户名" />
-    <input type="text" id="password" v-model="formData.password" placeholder="请输入密码" />
-    <button type="submit">登录</button>
-  </form>
+  <div class="login-form">
+    <form @submit.prevent="onLogin" class="space-y-1 py-5">
+      <input type="text" id="username" v-model="formData.username" placeholder="请输入用户名" />
+      <input type="text" id="password" v-model="formData.password" placeholder="请输入密码" />
+      <button type="submit">登录</button>
+    </form>
+  </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 form {
   display: flex;
   flex-direction: column;

@@ -23,5 +23,8 @@ export default [
     path: '/blog',
     name: 'blog',
     component: () => import('../views/pages/Blog.vue'),
+    meta: {
+      auth: 'blog',
+    },
   },
 ]

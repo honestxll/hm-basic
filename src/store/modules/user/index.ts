@@ -5,6 +5,22 @@ import { defineStore } from 'pinia'
 export default defineStore('user', {
   state: (): UserInfo => ({
     username: '',
+    password: '',
+    avatar: '',
+    email: '',
+    job: '',
+    jobName: '',
+    organization: '',
+    organizationName: '',
+    location: '',
+    locationName: '',
+    introduction: '',
+    personalWebsite: '',
+    phone: '',
+    registrationDate: '',
+    accountId: '',
+    certification: '',
+    permissions: [],
     role: '',
   }),
   getters: {},
@@ -55,5 +71,6 @@ export interface UserInfo {
   registrationDate?: string
   accountId?: string
   certification?: string
+  permissions: string[]
   role: string
 }

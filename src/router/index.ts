@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/404',
     component: () => import('../views/error/404.vue'),
-    name: 'Page404',
+    name: '404',
     meta: {
       isPublic: true,
       title: '404',
