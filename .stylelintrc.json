@@ -11,7 +11,8 @@
   "ignoreFiles": ["dist/**/*", "node_modules/**/*"],
   "plugins": ["stylelint-order"],
   "rules": {
-    "no-empty-source": null
+    "no-empty-source": null,
+    "scss/no-global-function-names": null
   },
   "overrides": [
     {

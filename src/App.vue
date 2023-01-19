@@ -1,9 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <Suspense>
-    <router-view />
-  </Suspense>
+  <router-view />
 </template>
 
 <style scoped lang="scss"></style>
